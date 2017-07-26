@@ -3,7 +3,13 @@
 
 ## ZDaemon
 
-To build:
+Work in progress
+
+- [*] Build steps
+- [ ] Port mapping needed?
+- [ ] How to connect on local LAN
+
+### To build
 
 ```
 docker build -t zdaemon .
@@ -13,8 +19,8 @@ You need to have the IWADs (and optionally PWADs) somewhere on your machine,
 then bind mount it to c:\zserv\wads. My gaming machine has doom1.wad, doom2.wad and a bunch of others in 
 C:\ZDaemon\wads\, so these steps below work for me
 
-To Run:
+### To Run
 
 ```
-docker run -it -v C:\ZDaemon\wads:c:\zserv\wads zdaemon
+docker run -it -p 10666:10666 -v C:\ZDaemon\wads:c:\wads zdaemon
 ```

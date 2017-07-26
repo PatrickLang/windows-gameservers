@@ -11,3 +11,6 @@ COPY --from=build /temp/zserv.cfg /zserv/zserv.cfg
 COPY --from=build /temp/zserv.exe /zserv/zserv.exe
 COPY --from=build /temp/zdaemon.wad /zserv/zdaemon.wad
 COPY --from=build /temp/bots.cfg /zserv/bots.cfg
+RUN setx /m WADDIR c:\wads
+WORKDIR c:\\zserv
+CMD zserv.exe
