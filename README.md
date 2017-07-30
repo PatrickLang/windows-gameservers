@@ -36,6 +36,6 @@ For more info go to https://zandronum.com/
 
 **Work in progress**
 
-- [ ] Build steps
+- [ ] Build steps - started
 - [ ] Port mapping needed?
 - [ ] How to connect on local LAN
