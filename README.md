@@ -10,7 +10,7 @@ For more info, go to http://www.zdaemon.org
 **Work in progress**
 
 - [x] Build steps
-- [ ] Port mapping needed?
+- [x] Port mapping
 - [ ] How to connect on local LAN
 
 #### To build

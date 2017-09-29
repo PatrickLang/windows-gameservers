@@ -9,10 +9,11 @@ RUN c:\temp\7z-sfx.exe /S /D=c:\7zip
 RUN c:\7zip\7z.exe e zserv.7z
 
 FROM microsoft/windowsservercore
+RUN setx /m WADDIR c:\wads
+WORKDIR c:\\zserv
+EXPOSE 10666
 COPY --from=build /temp/zserv.cfg /zserv/zserv.cfg
 COPY --from=build /temp/zserv.exe /zserv/zserv.exe
 COPY --from=build /temp/zdaemon.wad /zserv/zdaemon.wad
 COPY --from=build /temp/bots.cfg /zserv/bots.cfg
-RUN setx /m WADDIR c:\wads
-WORKDIR c:\\zserv
 CMD zserv.exe
