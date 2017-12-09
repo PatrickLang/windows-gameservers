@@ -7,7 +7,7 @@ ADD ${ZDAEMONSRC} c:\\temp\\zserv.7z
 ADD ${SEVENZIPSRC} c:\\temp\\7z-sfx.exe
 RUN c:\temp\7z-sfx.exe /S /D=c:\7zip
 RUN dir c:\temp
-RUN c:\7zip\7z.exe e -otemp zserv.7z
+RUN c:\7zip\7z.exe x zserv.7z
 
 FROM microsoft/windowsservercore
 RUN setx /m WADDIR c:\wads
