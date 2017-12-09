@@ -30,6 +30,10 @@ docker run -it -p 10666:10666 -v C:\ZDaemon\wads:c:\wads zdaemon
 ```
 
 
+#### Connecting from LAN
+
+
+
 ### Zandronum
 
 For more info go to https://zandronum.com/
