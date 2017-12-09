@@ -1,3 +1,6 @@
+# This is a multistage build Dockerfile
+# The first stage downloads and extracts binaries. This creates
+# a lot of layers but caches well
 FROM microsoft/windowsservercore as build
 ARG ZDAEMONSRC=http://downloads.zdaemon.org/zdaemon110b08_win32_bin.7z
 ARG SEVENZIPSRC=http://7-zip.org/a/7z1604-x64.exe
@@ -9,6 +12,7 @@ RUN c:\temp\7z-sfx.exe /S /D=c:\7zip
 RUN dir c:\temp
 RUN c:\7zip\7z.exe x zserv.7z
 
+# The next stage is the runtime image, which only includes the bare minimum needed
 FROM microsoft/windowsservercore
 RUN setx /m WADDIR c:\wads
 EXPOSE 10666
